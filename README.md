@@ -1,7 +1,5 @@
 # Oxy Studio
 
-> **Working name.** `Studio` is provisional. The project is an internal engineering workspace for Oxy; see [`docs/NAMING.md`](docs/NAMING.md) for naming direction.
-
 Oxy Studio is the **internal control plane for building, inspecting, debugging and operating the Oxy ecosystem**.
 
 The first-class problem is PostgreSQL: Oxy needs a genuinely good interface for its databases without replacing PostgreSQL or moving the platform to Supabase. The longer-term goal is broader: one secure workspace where Oxy developers can understand and operate databases, services, deployments, logs, repositories, infrastructure and AI agents.
@@ -19,7 +17,7 @@ This project is intentionally different:
 | Product/API control plane | Internal engineering control plane |
 | Safe for ordinary Oxy accounts | Privileged, explicit internal authorization |
 
-Studio must not become a second implementation of Console.
+Oxy Studio must not become a second implementation of Console.
 
 ## Principles
 
@@ -125,6 +123,10 @@ The MVP is successful when an authorized Oxy developer can safely inspect Oxy Po
 ## Security
 
 This is privileged internal software. Read [`docs/SECURITY.md`](docs/SECURITY.md) before implementing provider access or mutation endpoints.
+
+## Naming
+
+**Oxy Studio** is the final product name. See [`docs/NAMING.md`](docs/NAMING.md) for the recorded decision and the distinction from Oxy Console.
 
 ## Status
 
