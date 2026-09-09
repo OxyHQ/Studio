@@ -1,87 +1,34 @@
 # Naming
 
-`Oxy Studio` is a working name, not a final product decision.
+The final product name is **Oxy Studio**.
 
-The project is not merely a PostgreSQL client. It is intended to become the internal place where Oxy engineers inspect, build, debug and operate the ecosystem. The name should therefore still make sense when the product contains databases, services, deploys, logs, repositories, infrastructure and agents.
+The repository remains `OxyHQ/Studio`, and documentation, UI, packages and deployment naming should use **Oxy Studio** consistently.
 
-## Existing name to avoid overlapping with
+## Why Studio
 
-**Oxy Console** already means the developer-facing Oxy Cloud console for applications, credentials, webhooks and usage. This internal tool should not also be called Console.
+The project is intended to become the internal place where Oxy engineers inspect, build, debug and operate the ecosystem. Although PostgreSQL is the first major module, the product is broader than a database client: databases, services, deploys, logs, repositories, infrastructure and agents all belong in the same engineering workspace.
 
-## Naming criteria
+`Studio` fits that model well because it describes an integrated visual workspace without limiting the product to SQL, operations or infrastructure.
 
-A good name should:
+## Distinction from Oxy Console
 
-- feel internal/technical rather than consumer-facing
-- work for both database and broader engineering operations
-- be short and easy to say in conversation
-- fit `Oxy <name>` naturally
-- avoid implying it is only observability, only infrastructure or only SQL
-- avoid confusing users with Oxy Console
-- allow the repository/package namespace to remain sensible
+**Oxy Console** already means the developer-facing Oxy Cloud console for applications, OAuth credentials, webhooks, request logs and usage.
 
-## Candidates
+**Oxy Studio** is different:
 
-### 1. Oxy Forge — recommended working direction
+- internal and privileged
+- intended for Oxy employees and explicitly authorized developers/operators
+- focused on databases, services, deployments, infrastructure, repositories, observability and engineering operations
+- backed by stronger authorization, audit and production safety controls
 
-Why it works:
+The two products should remain clearly separate in language, routing and responsibilities.
 
-- a forge is where things are built and shaped
-- fits developers, infrastructure and operations
-- broad enough for databases, deploys and agents
-- distinct from Oxy Console
-- natural internal language: “check Forge”, “open it in Forge”, “Forge says prod is drifting”
+## Decision
 
-Potential downside: `Forge` is used by many developer products, so trademark/domain/package availability should be checked before making it public-facing.
+Selected: **Oxy Studio**
 
-### 2. Oxy Studio
+Repository: `OxyHQ/Studio`
 
-Why it works:
+Decision date: September 9, 2026.
 
-- excellent fit for an integrated visual workspace
-- immediately understandable
-- directly matches the Supabase Studio inspiration
-
-Downside:
-
-- generic
-- suggests a UI/workbench more than an operational control plane
-- could make the project sound like a Supabase derivative forever, even after it becomes much more Oxy-specific
-
-### 3. Oxy Workshop
-
-Friendly and accurate: a place where the team works on Oxy.
-
-Downside: less crisp as a serious infrastructure tool.
-
-### 4. Oxy Works
-
-Broad and brandable; implies the place where Oxy work happens.
-
-Downside: weaker immediate developer-tool meaning.
-
-### 5. Oxy Ops
-
-Clear for operations.
-
-Downside: too narrow because development/database workflows are central.
-
-### 6. Oxy Command
-
-Strong “command center” feeling.
-
-Downside: sounds more operational and action-oriented than exploratory/developer-oriented.
-
-### 7. Oxy Lab
-
-Good for experimentation.
-
-Downside: implies non-production/experimental software, which is the opposite of a tool eventually trusted with production operations.
-
-## Recommendation
-
-Keep the GitHub repository as `OxyHQ/Studio` during bootstrap and use **Studio** as the neutral working name in code/docs.
-
-Before the first polished internal release, decide whether to rename the product/repository. **Oxy Forge** is the strongest current candidate because it continues to fit the project after PostgreSQL stops being the only major module.
-
-Do not spend engineering time on a rename until the first database MVP shape is visible; the real product vocabulary will make the naming decision easier.
+Previous alternatives such as Oxy Forge, Oxy Workshop, Oxy Works, Oxy Ops and Oxy Command are no longer under consideration unless the product direction changes materially in the future.
