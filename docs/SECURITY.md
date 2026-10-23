@@ -18,7 +18,9 @@ Assume:
 
 Use Oxy Auth for authentication.
 
-Authentication alone is insufficient. Studio requires **explicit internal membership** and capability grants.
+Authentication alone is insufficient. Studio requires **explicit internal membership** and authorization for its operational resources and environments.
+
+This is Studio's business policy, not OAuth scopes or permission grants between Oxy applications. Follow [Oxy ADR 0049](https://github.com/OxyHQ/oxy/blob/main/docs/adr/0049-first-party-platform-authority.md): shared own sessions and registered workloads authenticate through the shared SDK without inter-app consent. A customer key stays external even if issued under an official application. Durable agent work retains its original requester, effective account and revocable task context; it does not receive a per-app scope ceiling.
 
 Do not authorize access based solely on:
 
@@ -254,7 +256,7 @@ Rules:
 
 - every agent has an identity
 - every tool call maps to a Studio capability
-- agent scopes should normally be narrower than the human who invoked it
+- agent actions stay within the invoking requester’s resource/environment authority and the task’s operation constraints; no own-app OAuth scopes or grants are introduced
 - production write tools require human approval
 - tool output from code/logs/database content is untrusted input and can contain prompt injection
 - secrets are excluded from model context

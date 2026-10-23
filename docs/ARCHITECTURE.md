@@ -52,7 +52,9 @@ Studio is more privileged than an ordinary Oxy app. The browser must never be tr
 - unrestricted AWS credentials
 - raw SSM/Secrets Manager values
 - long-lived GitHub installation tokens
-- service credentials with broad Oxy scopes
+- backend workload identity proofs or user requester proofs
+
+Oxy platform access follows [ADR 0049](https://github.com/OxyHQ/oxy/blob/main/docs/adr/0049-first-party-platform-authority.md): the gateway uses `OxyServer` and registered workload identity with a bound environment. The UI uses the shared Oxy session. Neither requires OAuth scopes, app grants or consent between own products. Requester identity and effective account travel through the shared session/task/requester-context contract; customer keys and external OAuth retain bounded authority.
 
 All privileged operations go through the gateway. The gateway resolves secret references server-side, enforces authorization, records audit events and applies environment-specific safety policy.
 

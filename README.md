@@ -24,7 +24,7 @@ Oxy Studio must not become a second implementation of Console.
 1. **Database-first, platform-second.** Build an excellent PostgreSQL experience first, but keep the architecture modular.
 2. **PostgreSQL stays PostgreSQL.** Studio is an interface and control plane, not a new database platform.
 3. **No privileged browser access.** Browsers never receive database passwords, AWS credentials or unrestricted provider tokens.
-4. **Oxy Auth is the identity layer.** Internal authorization is explicit, scoped and auditable.
+4. **Oxy Auth is the identity layer.** Own Oxy sessions and registered workloads need no OAuth scopes or inter-app consent. Studio still enforces internal membership and resource/environment operation policy.
 5. **Safe by default.** Production writes, destructive SQL and infrastructure mutations require stronger guardrails than reads.
 6. **Provider-independent core.** PostgreSQL, GitHub, AWS, Cloudflare and future providers are adapters, not assumptions embedded throughout the UI.
 7. **Humans stay in control of agents.** AI can inspect, explain and propose freely within its scope; dangerous mutations require human approval.
